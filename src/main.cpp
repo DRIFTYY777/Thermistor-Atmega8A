@@ -4,11 +4,7 @@
 #include "SSD1306Ascii.h"
 #include "SSD1306AsciiWire.h"
 
-// 0X3C+SA0 - 0x3C or 0x3D
 #define I2C_ADDRESS 0x3C
-
-// Define proper RST_PIN if required.
-#define RST_PIN -1
 
 SSD1306AsciiWire oled;
 
@@ -28,7 +24,7 @@ void setup()
   Wire.setClock(400000L);
 
   // rotate screen
-  oled.begin(&Adafruit128x32, I2C_ADDRESS, RST_PIN);
+  oled.begin(&Adafruit128x32, I2C_ADDRESS, -1);
   oled.setFont(Adafruit5x7);
   oled.clear();
   oled.setCursor(0, 0);
@@ -58,11 +54,14 @@ void loop()
   steinhart = 1.0 / steinhart;                      // Invert
   steinhart -= 273.15;                              // Convert to Celsius
 
+  float tempCalibrated = 1.028 * steinhart + 5.93; // Calibration factor
+
   // Print temperature to OLED
   oled.setCursor(0, 1);
   oled.set2X();
   oled.print("Temp:");
-  oled.print(steinhart, 2); // Print temperature with 2 decimal places
-  oled.println("°C");
+  // oled.print(steinhart, 2); // Print temperature with 2 decimal places
+  oled.print(tempCalibrated, 2); // Print temperature with 2 decimal places
+  oled.print("°C");
   delay(10); // Update every second
 }
