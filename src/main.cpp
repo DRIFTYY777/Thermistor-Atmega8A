@@ -59,9 +59,12 @@ void loop()
   // Print temperature to OLED
   oled.setCursor(0, 1);
   oled.set2X();
-  oled.print("Temp:");
+  oled.print("T:");
   // oled.print(steinhart, 2); // Print temperature with 2 decimal places
   oled.print(tempCalibrated, 2); // Print temperature with 2 decimal places
-  oled.print("°C");
+  oled.print("C");
+
+
+
   delay(10); // Update every second
 }

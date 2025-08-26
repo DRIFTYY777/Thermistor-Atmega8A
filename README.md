@@ -26,6 +26,7 @@ Here are images of the project:
 <img src="https://github.com/DRIFTYY777/Thermistor-Atmega8A/blob/main/IMG_9539.jpeg" width="300">
 <img src="https://github.com/DRIFTYY777/Thermistor-Atmega8A/blob/main/IMG_9540.jpeg" width="300">
 <img src="https://github.com/DRIFTYY777/Thermistor-Atmega8A/blob/main/IMG_9541.jpeg" width="300">
+<img src="https://github.com/DRIFTYY777/Thermistor-Atmega8A/blob/main/Sch.png" width="300">
 
 ## Key Considerations
 
